@@ -25,6 +25,29 @@ Sortie attendue:
 */
 
 function getCampusesTeachingReact(campuses) {
+  let tab = campuses.filter(campuse => {
+    for (let i = 0; i < campuse.curriculums.length; i++) {
+      if (campuse.curriculums[i] === 'JS/React') {
+        return campuse.city; 
+      }  
+    }
+  })
+ let result = tab.map(citySchool => {
+    return citySchool.city;
+  })
+  return result;
 }
+
+
+// function getJedisNames(characters) {
+//   tab = characters.filter(character => {
+//      return character.side.endsWith('light');   
+//    })
+//    result = tab.map(nameStarWars => {
+//      return nameStarWars.name;
+//    })
+//    return result;
+//  }
+
 
 module.exports = getCampusesTeachingReact;

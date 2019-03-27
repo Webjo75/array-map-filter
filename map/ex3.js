@@ -59,10 +59,26 @@ En sortie:
 
  */
 
+
+// * Si `rating` est infériéur à 60, la valeur à attribuer à label sera "rotten".
+// * Si `rating` est compris entre 60 et 75 (inclus), la valeur à attribuer à label sera "fresh".
+// * Si `rating` est supérieur à 75, la valeur à attribuer à label sera "certified fresh".
+
 function getMoviesFreshness(movies) {
+  return movies.map(movie => {
+    if (movie.rating < 60){
+      movie.label = "rotten"
+    } 
+    else if (movie.rating >= 60 && movie.rating <= 75) {
+      movie.label = "fresh"
+}
+else if (movie.rating > 75){
+  movie.label = "certified fresh"
 }
 
-
+return movie;
+})
+}
 
 // Ne pas modifier l'export
 module.exports = getMoviesFreshness;

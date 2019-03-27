@@ -51,9 +51,26 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
 ]
 */
 
-function getCirclesProperties(radiuses) {
-}
+// Formules pour les calculs :
+// * Ciconférence  =  2 * Pi * rayon
+// * Diamètre      =  Pi * rayon * rayon
+// a valeur de Pi est donnée par Math.PI.
 
+function getCirclesProperties(radiuses) {
+  return radiuses.map(radiuse => {
+     let resultat = {
+        radius : radiuse,
+        circumference : 2 * Math.PI * radiuse,
+        surface : Math.PI * radiuse * radiuse,
+  }
+  resultat.circumference = resultat.circumference.toFixed(3)
+  resultat.surface = resultat.surface.toFixed(3)
+  return resultat 
+})
+}
+//  radiuse.circumference = 2 * Math.PI * radiuse.radius
+//     radiuse.surface = Math.PI * radiuse.radius * radiuse.radius
+//     return radiuse;
 
 
 // Ne pas modifier l'export
